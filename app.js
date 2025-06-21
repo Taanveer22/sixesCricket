@@ -48,6 +48,6 @@ for (let singleAddBtn of entireAddBtns) {
     selectedPlayersContainer.appendChild(div);
 
     updateTotalCost(price);
+    updateGrandTotal();
   });
 }
-
