@@ -6,10 +6,14 @@ function getConvertedValue(id) {
   return convertedPrice;
 }
 
-function updateTotalCost(value) {
-  const totalCost = getConvertedValue("total-cost");
-  console.log(totalCost);
+function updateTotalCost(playerPrice) {
+  console.log(playerPrice);
 
-  const sum = totalCost + parseFloat(value);
+  let totalCost = document.getElementById("total-cost").innerText;
+  
+  let convertedTotalCost = parseFloat(totalCost);
+  let convertedPlayerPrice = parseFloat(playerPrice);
+
+  const sum = convertedTotalCost + convertedPlayerPrice;
   document.getElementById("total-cost").innerText = sum;
 }

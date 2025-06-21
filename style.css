@@ -26,6 +26,7 @@
   justify-content: space-around;
 }
 .player-btn {
+  background: green;
   padding: 15px;
   line-height: 20px;
   border: none;
@@ -37,8 +38,9 @@
   text-align: center;
 }
 .cart-container {
+  background: red;
   width: 37%;
-  /* border: 1px solid gray; */
+  border: 1px solid gray;
   margin: auto;
   box-shadow: 8px 8px 18px gray;
   border-radius: 5px;
