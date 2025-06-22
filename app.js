@@ -51,3 +51,48 @@ for (let singleAddBtn of entireAddBtns) {
     updateGrandTotal();
   });
 }
+
+// function starts here......................
+
+
+// f 03
+function updateGrandTotal(status) {
+  console.log(status);
+  console.log(typeof status);
+
+  let convertedTotalCost = getConvertedValue("total-cost");
+  let couponCode = document.getElementById("coupon-code").value;
+
+  if (typeof status == "undefined") {
+    document.getElementById("grand-total").innerText = convertedTotalCost;
+  } else {
+    if (couponCode == "tiger420") {
+      let discount = convertedTotalCost * 0.2;
+      let discountedPrice = convertedTotalCost - discount;
+      document.getElementById("grand-total").innerText = discountedPrice;
+    } else {
+      alert("please give valid coupon code");
+    }
+  }
+}
+
+// f 02
+function updateTotalCost(playerPrice) {
+  console.log(playerPrice);
+  let convertedPlayerPrice = parseFloat(playerPrice);
+
+  // let totalCost = document.getElementById("total-cost").innerText;
+  // let convertedTotalCost = parseFloat(totalCost);
+
+  let convertedTotalCost = getConvertedValue("total-cost");
+
+  const sum = convertedTotalCost + convertedPlayerPrice;
+  document.getElementById("total-cost").innerText = sum;
+}
+
+// f 01
+function getConvertedValue(id) {
+  const price = document.getElementById(id).innerText;
+  const convertedPrice = parseFloat(price);
+  return convertedPrice;
+}
