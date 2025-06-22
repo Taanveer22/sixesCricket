@@ -28,6 +28,20 @@ for (let singleAddBtn of entireAddBtns) {
     );
     console.log(selectedPlayersContainer);
 
+    // update the navbar
+    let convertedBudget = getConvertedValue("budget");
+    console.log(convertedBudget);
+
+    document.getElementById("budget").innerText =
+      convertedBudget - parseFloat(price);
+
+    let convertedCart = getConvertedValue("cart");
+    document.getElementById("cart").innerText = convertedCart + 1;
+
+    let convertedLeft = getConvertedValue("left");
+    document.getElementById("left").innerText = convertedLeft - 1;
+
+    
     // 1st step : create the elements
     const div = document.createElement("div");
     div.classList.add("selected-players");
@@ -53,7 +67,6 @@ for (let singleAddBtn of entireAddBtns) {
 }
 
 // function starts here......................
-
 
 // f 03
 function updateGrandTotal(status) {
