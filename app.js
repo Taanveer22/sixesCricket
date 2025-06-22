@@ -28,6 +28,30 @@ for (let singleAddBtn of entireAddBtns) {
     );
     console.log(selectedPlayersContainer);
 
+    // validation before update the navbar
+    const maxPlayers = 6;
+    const noPlayer = 0;
+
+    const beforeLoadCart = getConvertedValue("cart");
+    const berforeLoadLeft = getConvertedValue("left");
+    // console.log(beforeLoadCart);
+    // console.log(berforeLoadLeft);
+
+    if (beforeLoadCart + 1 > maxPlayers || berforeLoadLeft - 1 < noPlayer) {
+      alert("cart player limit over");
+      return;
+    }
+
+    const totalBudget = getConvertedValue("budget");
+    if (parseFloat(price) > totalBudget) {
+      alert("budget is over");
+      return;
+    }
+
+    // event.target related simple task
+    event.target.setAttribute("disabled", false);
+    event.target.parentNode.style.backgroundColor = "yellow";
+
     // update the navbar
     let convertedBudget = getConvertedValue("budget");
     console.log(convertedBudget);
@@ -41,7 +65,12 @@ for (let singleAddBtn of entireAddBtns) {
     let convertedLeft = getConvertedValue("left");
     document.getElementById("left").innerText = convertedLeft - 1;
 
-    
+    // after update the navbar
+    const afterLoadCart = getConvertedValue("cart");
+    const afterLoadLeft = getConvertedValue("left");
+    // console.log(afterLoadCart);
+    // console.log(afterLoadLeft);
+
     // 1st step : create the elements
     const div = document.createElement("div");
     div.classList.add("selected-players");
